@@ -1,0 +1,11 @@
+version: '3'
+
+services: 
+  joga-back:
+    image: bitnami/postgresql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=joga
+      - POSTGRESQL_PASSWORD=joga
+      - POSTGRESQL_DATABASE=joga-db
