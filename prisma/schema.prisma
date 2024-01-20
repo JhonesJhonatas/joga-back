@@ -11,19 +11,17 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(uuid())
-  name       String
-  email      String
-  birthDate  String
-  cpf        String
-  shift      String
-  password   String
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @default(now())
-  UserType   UserType @relation(fields: [userTypeId], references: [id])
-  userTypeId String
-  Course     Course?  @relation(fields: [courseId], references: [id])
-  courseId   String?
+  id        String     @id @default(uuid())
+  name      String
+  email     String
+  birthDate DateTime
+  cpf       String
+  shift     String
+  password  String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now())
+  UserType  UserType[]
+  Course    Course[]
 }
 
 model UserType {
