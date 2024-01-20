@@ -1,5 +1,8 @@
+import 'reflect-metadata'
+import './shared/container'
 import express, { NextFunction, Request, Response } from 'express'
 import cors from 'cors'
+import 'dotenv/config'
 import { AppError } from './errors/AppError'
 import { routes } from './routes'
 
