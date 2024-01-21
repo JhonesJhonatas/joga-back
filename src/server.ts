@@ -4,6 +4,7 @@ import express, { NextFunction, Request, Response } from 'express'
 import cors from 'cors'
 import 'dotenv/config'
 import { AppError } from './errors/AppError'
+import 'express-async-errors'
 import { routes } from './routes'
 
 const app = express()
