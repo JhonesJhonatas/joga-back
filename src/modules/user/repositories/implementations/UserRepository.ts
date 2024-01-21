@@ -20,6 +20,24 @@ class UserRepository implements IUserRepository {
     return createdUser
   }
 
+  async listUsers(): Promise<User[]> {
+    const usersList = await prismaClient.user.findMany()
+
+    return usersList
+  }
+
+  async findByCPF(cpf: string): Promise<User> {
+    const user = await prismaClient.user.findFirst({ where: { cpf } })
+
+    return user as User
+  }
+
+  async findByEmail(email: string): Promise<User> {
+    const user = await prismaClient.user.findFirst({ where: { email } })
+
+    return user as User
+  }
+
   async edit({
     id,
     birthDate,

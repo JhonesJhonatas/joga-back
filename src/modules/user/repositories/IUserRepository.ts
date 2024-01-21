@@ -11,6 +11,13 @@ interface IUserRepository {
     password,
     shift,
   }: ICreateUserDTO): Promise<User>
+
+  listUsers(): Promise<User[]>
+
+  findByCPF(cpf: string): Promise<User>
+
+  findByEmail(email: string): Promise<User>
+
   edit({
     id,
     birthDate,
@@ -20,6 +27,7 @@ interface IUserRepository {
     password,
     shift,
   }: IEditUserDTO): Promise<User>
+
   delete(id: string): Promise<User>
 }
 
